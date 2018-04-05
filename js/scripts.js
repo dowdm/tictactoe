@@ -27,27 +27,30 @@ $(document).ready(function(){
   var playerOne = new Player ("", "X");
   var playerTwo = new Player ("", "O");
   var newGame = new Game ("X")
+  var boardArray =[];
+//name entry behavior
   $("#player-1").submit(function(event){
     event.preventDefault();
     playerOne.name = $("#pOneName").val();
     $("#pOneName").text("");
-    console.log(playerOne.name);
   })
   $("#player-2").submit(function(event){
     event.preventDefault();
     playerTwo.name = $("#pTwoName").val();
     $("#pTwoName").text("");
-    console.log(playerTwo.name);
   })
-
+//box click behavior
   $(".a").one("click", function(){
     if(newGame.turn === "X"){
       $("#img0").attr("src","img/x1.png");
     } else {
     $("#img0").attr("src","img/donut.jpeg");
     }
+    var a = new Space(0, newGame.turn)
+    boardArray.push(a);
     newGame.playerSwitch();
   });
+
   $(".b").one("click", function(){
     if(newGame.turn === "X"){
       $("#img1").attr("src","img/x1.png");
@@ -56,6 +59,7 @@ $(document).ready(function(){
     }
     newGame.playerSwitch();
   });
+
   $(".c").one("click", function(){
     if(newGame.turn === "X"){
       $("#img2").attr("src","img/x1.png");
