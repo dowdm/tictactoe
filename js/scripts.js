@@ -14,12 +14,19 @@ function Game (turn) {
 }
 
 //
-// Game.prototype.players = function ()
+Game.prototype.playerSwitch = function() {
+  if (this.turn === "X"){
+    this.turn = "O";
+  } else {
+    this.turn = "X";
+  }
+}
 
 //UI Logic
 $(document).ready(function(){
   var playerOne = new Player ("", "X");
   var playerTwo = new Player ("", "O");
+  var newGame = new Game ("X")
   $("#player-1").submit(function(event){
     event.preventDefault();
     playerOne.name = $("#pOneName").val();
@@ -32,31 +39,77 @@ $(document).ready(function(){
     $("#pTwoName").text("");
     console.log(playerTwo.name);
   })
-  $(".a").click(function(){
-    $("#img0").attr("src","img/donut.jpeg")
+
+  $(".a").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img0").attr("src","img/x1.png");
+    } else {
+    $("#img0").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".b").click(function(){
-    $("#img1").attr("src","img/donut.jpeg")
+  $(".b").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img1").attr("src","img/x1.png");
+    } else {
+    $("#img1").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".c").click(function(){
-    $("#img2").attr("src","img/donut.jpeg")
+  $(".c").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img2").attr("src","img/x1.png");
+    } else {
+    $("#img2").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".d").click(function(){
-    $("#img3").attr("src","img/donut.jpeg")
+  $(".d").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img3").attr("src","img/x1.png");
+    } else {
+    $("#img3").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".e").click(function(){
-    $("#img4").attr("src","img/donut.jpeg")
+  $(".e").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img4").attr("src","img/x1.png");
+    } else {
+    $("#img4").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".f").click(function(){
-    $("#img5").attr("src","img/donut.jpeg")
+  $(".f").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img5").attr("src","img/x1.png");
+    } else {
+    $("#img5").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".g").click(function(){
-    $("#img6").attr("src","img/donut.jpeg")
+  $(".g").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img6").attr("src","img/x1.png");
+    } else {
+    $("#img6").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".h").click(function(){
-    $("#img7").attr("src","img/donut.jpeg")
+  $(".h").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img7").attr("src","img/x1.png");
+    } else {
+    $("#img7").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
-  $(".i").click(function(){
-    $("#img8").attr("src","img/donut.jpeg")
+  $(".i").one("click", function(){
+    if(newGame.turn === "X"){
+      $("#img8").attr("src","img/x1.png");
+    } else {
+    $("#img8").attr("src","img/donut.jpeg");
+    }
+    newGame.playerSwitch();
   });
 })
